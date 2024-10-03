@@ -1,0 +1,64 @@
+h1{
+    text-align: center;
+}
+
+form {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.register{
+    display: flex;
+    flex-direction: column;
+}
+
+label{
+    font-weight: bold;
+    margin-bottom: 5px;  
+}
+
+input,select{
+    box-sizing: border-box;
+    border: 4px;
+    border: 1px solid rgb(102, 174, 102) ;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+button{
+    background-color: green;
+    font-size: larger;
+    margin: 8px auto;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    width: 90%;
+    text-align: center;
+    padding: 5px;
+}
+#link{
+    background-color: rgb(255, 255, 255);
+    font-size: larger;
+    margin: 8px auto;
+    border-radius: 5px;
+    border: none;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    text-decoration: none;
+    width: 90%;
+    text-align: center;
+    padding: 5px;
+}
+
+button:hover{
+    background-color: rgb(37, 192, 37);
+}
+
+span{
+    color: red;
+}
