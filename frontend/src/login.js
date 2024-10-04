@@ -22,7 +22,11 @@ function Login(){
             axios
               .post("http://localhost:8081/login", values)
               .then((res) => {
+                if(res.data === "Success"){
                 navigate("/home");
+                }else{
+                  alert("No record existed");
+                }
               })
               .catch((err) => console.log(err));
           }
