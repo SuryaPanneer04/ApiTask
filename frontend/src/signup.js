@@ -7,7 +7,8 @@ function Signup() {
   const [values, setValues] = useState({
     name: '',
     email: '',
-    password: ''
+    password: '',
+    role:''
   });
   const navigate = useNavigate();
   const [errors, setErrors] = useState({}); // Change from array to object
@@ -70,6 +71,17 @@ function Signup() {
           autoComplete="current-password" // Add autocomplete as per warning
         />
         {errors.password && <span>{errors.password}</span>}
+        
+        <label htmlFor="role">Role</label>
+        <input
+          type="text"
+          placeholder="Enter Role"
+          onChange={handleInput}
+          name="role"
+          autoComplete="role" // Add autocomplete as per warning
+        />
+        {errors.role && <span>{errors.role}</span>} 
+        
 
         <button type="submit">Signup</button>
         <Link to="/" id="link">

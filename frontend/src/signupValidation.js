@@ -33,6 +33,13 @@ function Validation(values){
         error.password= ""
     }
 
+    if(values.role === ""){
+        error.role ="Role should not be empty"
+    }
+    else{
+        error.role=""
+    }
+
     return error ;
 
 }

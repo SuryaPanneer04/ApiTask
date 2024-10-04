@@ -5,7 +5,8 @@ import axios from "axios";
 function Login(){
       const [values,setValues] =useState({
         email:'',
-        password:''
+        password:'',
+        role:''
       })
     const navigate = useNavigate();
       const [errors,setErrors] = useState([]) 
@@ -18,11 +19,12 @@ function Login(){
          event.preventDefault();
          const validationErrors = Validation(values);
          setErrors(validationErrors);
-         if (!validationErrors.email && !validationErrors.password) {
+         if (!validationErrors.email && !validationErrors.password && !validationErrors.role) {
             axios
               .post("http://localhost:8081/login", values)
               .then((res) => {
                 if(res.data === "Success"){
+                  console.log(values.role);
                 navigate("/home");
                 }else{
                   alert("No record existed");
@@ -42,6 +44,9 @@ function Login(){
               <label htmlFor="password">Password</label>
               <input type="password" id="password" placeholder="password" onChange={handleInput} name="password"autoComplete="password" />
               {errors.password && <span>{errors.password}</span>}
+              <label htmlFor="role">Role</label>
+              <input type="text" id="role" placeholder="enter your role" onChange={handleInput} name="role"autoComplete="role" />
+              {errors.role && <span>{errors.role}</span>}
                 <button type="submit">Login</button>
                 <Link to ='/signup' id="link">Create Account</Link>
         </div>

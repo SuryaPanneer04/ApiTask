@@ -24,6 +24,15 @@ function Validation(values){
     else{
         error.password=""
     }
+    
+    if(values.role === ""){
+        error.role="role should not be empty"
+    }
+    else{
+        error.role=""
+    }
+
+    
     return error ;
 
 }
