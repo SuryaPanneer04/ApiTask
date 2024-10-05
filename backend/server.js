@@ -1,7 +1,7 @@
 const express = require("express");
 const mysql = require('mysql');
 const cors = require('cors');
-
+// const bycrpt = require('bcrypt');
 const app =express();
 
 app.use(cors());
@@ -22,6 +22,7 @@ app.post('/signup',(req,res) =>{
     req.body.password,
     req.body.role
     ]
+    
     db.query(sql, [values],(err, data) => {
         if(err){
              return res.json("Error");
